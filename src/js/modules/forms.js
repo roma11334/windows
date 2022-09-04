@@ -57,9 +57,12 @@ const forms = (state) => {
                       })
                       .catch(() => mess.innerHTML = message.failure)
                       .finally(() => {
-                        inputs.forEach(item => {
-                            item.value = '';
-                            setTimeout(() => mess.remove(), 3000);
+                        inputs.forEach(item2 => {
+                            item2.value = '';
+                            setTimeout(() =>{
+                                mess.remove();
+                                hideContent('[data-modal]');
+                            } , 3000);
                         })
                       });
             

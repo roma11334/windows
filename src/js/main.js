@@ -3,7 +3,8 @@ import modals from './modules/modals';
 import tabs from './modules/tabs';
 import forms from './modules/forms';
 import changeModalState from './modules/changeModalState';
-import images from './modules/images'
+import images from './modules/images';
+import timer from './modules/timer';
 
 window.addEventListener('DOMContentLoaded', (e) => {
 
@@ -17,4 +18,5 @@ window.addEventListener('DOMContentLoaded', (e) => {
     tabs('.balcon_icons', '.balcon_icons_img', '.big_img > img', 'do_image_more', 'inline-block')
     forms(modalState);
     images();
+    timer('.container1', '2022-11-01');
 }); 

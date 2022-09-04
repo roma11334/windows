@@ -45,9 +45,10 @@ const modals = (state) => {
 
                 modal.style.display = 'none';
                 document.body.style.overflow = '';
+                document.body.style.marginRight = '0px';
             }
 
-            document.body.style.marginRight = '0px';
+            
             
         });
         
@@ -66,9 +67,10 @@ const modals = (state) => {
         x.style.width = '50px';
         x.style.height = '50px';
         x.style.overflowY = 'scroll';
+        x.style.visibility = 'hidden';
         document.body.appendChild(x);
         let marginR = x.offsetWidth - x.clientWidth;
-
+        x.remove();
         return marginR;
     }
 

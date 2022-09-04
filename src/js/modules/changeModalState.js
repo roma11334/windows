@@ -46,26 +46,26 @@ const changeModalState = (state) => {
                         break;
                 }
                 
-                const fuck = document.querySelector('.popup_calc_button');
-                const fuck2 = document.querySelector('.popup_calc_profile_button'); 
-                let sms = document.createElement('div');
-                sms.classList.add('status');
-                sms.innerHTML = 'Ты че сука, а кто будет все поля заполнять???';
-                fuck.disabled = false;
-                fuck2.disabled = false;
+                // const fuck = document.querySelector('.popup_calc_button');
+                // const fuck2 = document.querySelector('.popup_calc_profile_button'); 
+                // let sms = document.createElement('div');
+                // sms.classList.add('status');
+                // sms.innerHTML = 'Ты че сука, а кто будет все поля заполнять???';
+                // fuck.disabled = false;
+                // fuck2.disabled = false;
 
                 
 
-                fuck.addEventListener('mouseover', () => {
-                    if(state.form == undefined || state.width == undefined || state.height == undefined){
-                        fuck.disabled = true;
-                        fuck.append(sms);
-                    }
-                })
+                // fuck.addEventListener('mouseover', () => {
+                //     if(state.form == undefined || state.width == undefined || state.height == undefined){
+                //         fuck.disabled = true;
+                //         fuck.append(sms);
+                //     }
+                // })
 
-                if(state.type == undefined || state.profile == undefined){
-                    fuck2.disabled = true;
-                }
+                // if(state.type == undefined || state.profile == undefined){
+                //     fuck2.disabled = true;
+                // }
 
                 console.log(state);
             });
