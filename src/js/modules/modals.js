@@ -4,6 +4,7 @@ const modals = (state) => {
         const modal = document.querySelector(modalSelector);
         const close = document.querySelector(closeSelector);
         const close_data_modal = document.querySelectorAll('[data-modal]');
+        const marginRight = computedMargin();
 
         trigger.forEach(item => {
             item.addEventListener('click',(e) => {
@@ -17,6 +18,8 @@ const modals = (state) => {
 
                 modal.style.display = "block";
                 document.body.style.overflow = 'hidden';
+                document.body.style.marginRight = `${marginRight}px`;
+                console.log(marginRight);
             });
         })
 
@@ -29,6 +32,8 @@ const modals = (state) => {
             close_data_modal.forEach(item => {
                 item.style.display = 'none';
             });
+
+            document.body.style.marginRight = '0px';
         });
 
         modal.addEventListener('click', (e) => {
@@ -41,6 +46,8 @@ const modals = (state) => {
                 modal.style.display = 'none';
                 document.body.style.overflow = '';
             }
+
+            document.body.style.marginRight = '0px';
             
         });
         
@@ -52,6 +59,17 @@ const modals = (state) => {
             document.querySelector(selector).style.display = 'block';
             document.body.style.overflow = 'hidden';
         }, time)
+    }
+
+    function computedMargin() {
+        let x = document.createElement('div');
+        x.style.width = '50px';
+        x.style.height = '50px';
+        x.style.overflowY = 'scroll';
+        document.body.appendChild(x);
+        let marginR = x.offsetWidth - x.clientWidth;
+
+        return marginR;
     }
 
     bindModal('.popup_engineer_btn', '.popup_engineer', '.popup_engineer .popup_close');
